@@ -1,7 +1,7 @@
 # Assignment 2 - TODO Application
 
 ## Author
-
+Connor Warner
 
 
 ## Description
