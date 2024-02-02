@@ -6,15 +6,31 @@ Class: CIS 218
 Date: 2/7/24
 {% endcomment %}
 
-
+<html>
 {% block title %}
-TODO List
+Todo List
 {% endblock title %}
 
 {% block content %}
-<h1>TODO List</h1>
+<div class="container">
+    <div class='align-items-center justify-content-center justify-content-md-between border-bottom'>
+        <p class="h1">Todo List</p>
+        <button type="button" class="btn btn-primary btn-lg py-2">&#10010; Add Todo</button>
+        <p class="font-weight-bold mt-2"><b>Name of Thing Todo</b></p>
+    </div>
+</div>
+
 {% for todo in todo_list %}
-    <li>{{ todo.text }}</li>
+  <div class="container">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 border-bottom">
+      <li class="">{{ todo.text }}</li>
+      <div class="col-md-3 text-end">
+        <button type="button" class="btn btn-outline-secondary me-2 bg-success text-light">&#9998; Edit</button>
+        <button type="button" class="btn btn-secondary bg-danger text-light">&#128465; Delete</button>
+      </div>
+    </header>
+  </div>
 {% endfor %}
 
 {% endblock content %}
+</html>
