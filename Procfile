@@ -1,0 +1,1 @@
+web: gunicorn django_project.wsgl --log-file -

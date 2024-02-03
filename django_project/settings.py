@@ -1,3 +1,7 @@
+# Name: Connor Warner
+# Class: CIS 218
+# Date: 2/7/24
+
 """
 Django settings for django_project project.
 
@@ -25,7 +29,7 @@ SECRET_KEY = 'django-insecure-05ju#qef@+80(78_phbg$)%@)5ii+f6w+8jrhu#wsxuypjwlzm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition

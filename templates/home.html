@@ -12,25 +12,40 @@ Todo List
 {% endblock title %}
 
 {% block content %}
-<div class="container">
+<div class="container fw-bold">
     <div class='align-items-center justify-content-center justify-content-md-between border-bottom'>
         <p class="h1">Todo List</p>
-        <button type="button" class="btn btn-primary btn-lg py-2">&#10010; Add Todo</button>
-        <p class="font-weight-bold mt-2"><b>Name of Thing Todo</b></p>
+        <a href="admin/todo/todo/add/">
+            <button type="button" class="btn btn-primary btn-lg py-2">&#10010; Add Todo</button>
+        </a>
+        <div class="d-flex mt-2">
+            <p class="w-50">Name of Thing Todo</p>
+            <p class="flex-lg-fill">Date to Complete</p>
+            <p class="justify-content-end">Actions</p>
+        </div>
     </div>
 </div>
 
-{% for todo in todo_list %}
-  <div class="container">
-    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 border-bottom">
-      <li class="">{{ todo.text }}</li>
-      <div class="col-md-3 text-end">
-        <button type="button" class="btn btn-outline-secondary me-2 bg-success text-light">&#9998; Edit</button>
-        <button type="button" class="btn btn-secondary bg-danger text-light">&#128465; Delete</button>
-      </div>
-    </header>
-  </div>
-{% endfor %}
+    {% for todo in todo_list %}
+    <div class="container">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 border-bottom">
+        <div class="w-50">
+            <li>{{ todo.name }} </li>
+        </div>
+        <div class="flex-lg-fill">
+            <p>{{ todo.complete_by }}<p>
+        </div>
+        <div class="col-md-3 text-end">
+            <a href="{% url 'admin:todo_todo_change' todo.pk %}">
+                <button type="button" class="btn btn-outline-secondary me-2 bg-success text-light px-4">&#9998; Edit</button>
+            </a>
+            <a href="{% url 'admin:todo_todo_delete' todo.pk %}">
+                <button type="button" class="btn btn-outline-secondary bg-danger text-light px-3">&#10005; Delete</button>
+            </a>
+        </div>
+        </header>
+    </div>
+    {% endfor %}
 
 {% endblock content %}
 </html>

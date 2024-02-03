@@ -120,9 +120,9 @@ If you have more questions regarding this, don't hesitate to ask.
 | **Extra Credit** Full Heroku Deployment  |   **5**|
 
 ## Outside Resources Used
-
+W3Schools - Just to figure out some CSS stuff
 
 
 ## Known Problems, Issues, And/Or Errors in the Program
-
+None
 
